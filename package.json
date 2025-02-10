@@ -1,7 +1,28 @@
 {
   "dependencies": {
     "express": "^4.21.2",
+    "mysql": "^2.18.1",
+    "node-fetch": "^3.3.2",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1"
-  }
+  },
+  "name": "codeyatra025",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiyabhandari/codeyatra025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jiyabhandari/codeyatra025/issues"
+  },
+  "homepage": "https://github.com/Jiyabhandari/codeyatra025#readme",
+  "description": ""
 }
