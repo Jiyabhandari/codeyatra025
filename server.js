@@ -16,8 +16,33 @@ io.on('connection', (socket) => {
   console.log('A user connected');
   
   // Handle messages sent by the client
-  socket.on('message', (data) => {
+  socket.on('message', async (data) => {
     console.log('Message received:', data);
+    
+    // If the message contains "sendSMS", send an SMS
+    if (data.includes("sendSMS")) {
+      try {
+        const response = await fetch('http://api.sparrowsms.com/v2/sms/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ 
+            token: 'v2_8WPPbKnTIHEao1PoiobQUnSjiAE.1TYZ',
+            from: 'Demo',
+            to: '9849966477',
+            text: 'Hello, World!',
+          }),
+        });
+        
+        const responseData = await response.json();
+        console.log('SMS sent successfully:', responseData);
+      } catch (error) {
+        console.error('Error sending SMS:', error);
+      }
+    } else {
+      console.log('No SMS triggered, message did not meet conditions.');
+    }
   });
 
   // Handle disconnection
