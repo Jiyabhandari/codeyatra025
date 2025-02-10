@@ -30,8 +30,8 @@ io.on('connection', (socket) => {
           body: JSON.stringify({ 
             token: 'v2_8WPPbKnTIHEao1PoiobQUnSjiAE.1TYZ',
             from: 'Demo',
-            to: '9849966477',
-            text: 'Hello, World!',
+            to: '9845990052',
+            text: 'तपाईंको शहर, तपाईंको फोहोर, तपाईंको नियन्त्रण।',
           }),
         });
         
