@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Add your styles here */
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+#confirmation {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+    </style>
+</head>
+
+<body>
+    <h1 class="centered">User Information Form</h1>
+
+    <form onsubmit="return validateForm()">
+        <label for="firstName">Full Name:</label>
+        <input type="text" id="fullName" required>
+
+        <label for="province">Province:</label>
+        <select id="province" required>
+            <option value="Province 1">Koshi</option>
+            <option value="Province 2">Madhesh</option>
+            <option value="Province 3">Bagmati</option>
+            <option value="Province 4">Gandaki</option>
+            <option value="Province 5">Lumbini</option>
+            <option value="Province 6">Karnali</option>
+            <option value="Province 7">Sudurpashchim</option>
+        </select>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" required>
+
+        <label for="majorLocation">Major Location:</label>
+        <input type="text" id="majorLocation" required>
+
+        <label for="minorLocation">Minor Location:</label>
+        <input type="text" id="minorLocation" required>
+
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" required>
+
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" pattern="[0-9]{10}" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" required>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="confirmation" style="display: none;">
+        <h2>Confirmation Page</h2>
+        <p><strong>Full Name:</strong> <span id="confirmFullName"></span></p>
+        <p><strong>Province:</strong> <span id="confirmProvince"></span></p>
+        <p><strong>City:</strong> <span id="confirmCity"></span></p>
+        <p><strong>Major Location:</strong> <span id="confirmMajorLocation"></span></p>
+        <p><strong>Minor Location:</strong> <span id="confirmMinorLocation"></span></p>
+        <p><strong>Latitude:</strong> <span id="confirmLatitude"></span></p>
+        <p><strong>Longitude:</strong> <span id="confirmLongitude"></span></p>
+        <p><strong>Phone Number:</strong> <span id="confirmPhone"></span></p>
+        <p><strong>Email Address:</strong> <span id="confirmEmail"></span></p>
+    </div>
+
+    <script>
+        function validateForm() { 
+    // Validation for first name and last name 
+    var firstName = document.getElementById('firstName').value; 
+    var lastName = document.getElementById('lastName').value; 
+    if (firstName.trim() === '' || lastName.trim() === '') { 
+        alert('First name and last name cannot be blank.'); 
+        return false; 
+    } 
+
+    // Validation for address, city, state, and zip code 
+    var address = document.getElementById('address').value; 
+    var city = document.getElementById('city').value; 
+    var state = document.getElementById('state').value; 
+    var zipCode = document.getElementById('zipCode').value; 
+    if (address.trim() === '' || city.trim() === '' || state.trim() === '' || zipCode.trim() === '') { 
+        alert('Address, city, state, and zip code cannot be blank.'); 
+        return false; 
+    } 
+
+    // Validation for phone number 
+    var phone = document.getElementById('phone').value; 
+    if (!/^\d{10}$/.test(phone)) { 
+        alert('Please enter a valid 10-digit phone number.'); 
+        return false; 
+    } 
+
+    // Validation for email address 
+    var email = document.getElementById('email').value; 
+    if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)) { 
+        alert('Please enter a valid email address.'); 
+        return false; 
+    } 
+
+    // Validation for birth date 
+    var birthDate = document.getElementById('birthDate').value; 
+    var currentDate = new Date().toISOString().split('T')[0]; 
+    if (birthDate > currentDate) { 
+        alert('Please enter a valid birth date.'); 
+        return false; 
+    } 
+
+    // Display confirmation 
+    document.getElementById('confirmFirstName').textContent = firstName; 
+    document.getElementById('confirmLastName').textContent = lastName; 
+    document.getElementById('confirmAddress').textContent = address; 
+    document.getElementById('confirmCity').textContent = city; 
+    document.getElementById('confirmState').textContent = state; 
+    document.getElementById('confirmZipCode').textContent = zipCode; 
+    document.getElementById('confirmPhone').textContent = phone; 
+    document.getElementById('confirmEmail').textContent = email; 
+    document.getElementById('confirmBirthDate').textContent = birthDate; 
+    document.getElementById('confirmMessage').textContent = document.getElementById('message').value; 
+
+    // Show confirmation page 
+    document.getElementById('userForm').style.display = 'none'; 
+    document.getElementById('confirmation').style.display = 'block'; 
+
+    return false; // Prevent form submission 
+} 
+    </script>
+</body>
+
+</html>

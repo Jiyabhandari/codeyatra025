@@ -1,12 +1,15 @@
 const express = require('express');
 const http = require('http');
-const socketIo = require('socket.io');
-const fetch = require('node-fetch'); // Ensure node-fetch is installed
+const {Server} = require('socket.io');
 
+const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
-
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+  },
+});
 // Predefined location (center of the radius)
 const predefinedLat = 27.7172; // Example: Kathmandu Latitude
 const predefinedLng = 85.3240; // Example: Kathmandu Longitude
@@ -55,6 +58,8 @@ io.on('connection', (socket) => {
 
     // If the user is within the specified radius, send an SMS
     if (distance <= radius) {
+      console.log("Garbage truck has arrived.");
+      
       /*
       try {
         const response = await fetch('http://api.sparrowsms.com/v2/sms/', {

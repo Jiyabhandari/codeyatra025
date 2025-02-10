@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Articles</title>
+</head>
+<style> 
+
+</style>
+<body>
+    <section id="newsSection" style="background-color: #d9d9a0;">        
+        <h1 class="centered">Latest News</h1>
+        <div class="news-article">
+            <h2 style="color:#024b02">Article 1</h2>
+            <p>When posted articles will be available here such as: Photos,
+                videos, and other media related to the company and its services.</p>
+        </div>
+        <!-- Add more news articles as needed -->
+    </section>
+    <script> 
+          function toggleNews() {
+        var newsSection = document.getElementById('newsSection');
+        if (newsSection.style.display === 'none' || newsSection.style.display === '') {
+            newsSection.style.display = 'block';
+            window.scrollTo({ top: newsSection.offsetTop, behavior: 'smooth' });
+        } else {
+            newsSection.style.display = 'none';
+        }
+    }
+
+    </script>
+    </body>
+</html>
+    
+

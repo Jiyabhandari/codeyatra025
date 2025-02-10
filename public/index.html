@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Waste Management: JunkRe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-size: 32px; /* Increased size even more */
+        }
+
+        header {
+            background: #4caf50;
+            color: white;
+            padding: 50px 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 50px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 32px;
+        }
+
+        .hero {
+            background: #d9d9a0;
+            padding: 200px 150px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #4caf50;
+        }
+
+        .hero p {
+            font-size: 2.5rem;
+            line-height: 2.5;
+        }
+
+        .hero .highlight-text {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero button {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 30px 50px;
+            font-size: 2.5rem;
+            margin-top: 50px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background: darkgreen;
+        }
+
+        .hero img {
+            width: 600px;
+            height: auto;
+        }
+
+        .features {
+            display: flex;
+            background: #222;
+            color: white;
+            padding: 150px;
+            justify-content: space-around;
+            align-items: left;
+        }
+
+        .feature-list {
+            max-width: 900px;
+        }
+
+        .feature-list h2 {
+            font-size: 3rem;
+            margin-left: -300px;
+        }
+
+        .analytics {
+            padding: 150px;
+            text-align: center;
+            background: white;
+            font-size: 2.5rem;
+        }
+
+        .gamification {
+            background: #f4f4f4;
+            padding: 150px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        footer {
+            background: #4caf50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 70px 150px;
+            font-size: 2.5rem;
+        }
+
+        .social-links {
+            padding-top: 50px;
+        }
+
+        .social-links a,
+        .legal a {
+            color: white;
+            margin-right: 30px;
+            text-decoration: none;
+        }
+
+        .contact .contact-item {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .feature-list {
+            text-align: left;
+            /* Aligns text to the left */
+            max-width: 400px;
+            margin-left: 50px;
+            /* Aligns it to the left side of the webpage */
+        }
+/* Aligns specific text to the center */
+    .centered {
+    text-align: center;
+}
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        #confirmation {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">JunkRe</div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="register.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Smart Waste Management</h1>
+            <p><span class="highlight-text"><strong>Real-Time Tracking, Real-World</strong></span></p>
+            <img src="image/trash.png.png" alt="trash" style="width:150px;height:auto;">
+            <p>"JunkRe" is a smart waste management web application revolutionizing urban waste handling. Real-time
+                garbage truck tracking allows users to monitor truck locations and ensures timely service.</p>
+            <button>Learn More</button>
+        </div>
+        <img src="image/green.png" alt="green" style="width:800px;height:600;">
+    </section>
+    
+    <section class="features">
+        <div class="feature-list">
+            <h1 style="color: #d9d9a0; text-align: left;"><i> OUR FEATURES</i></h1>            <h2>Garbage Truck Tracking & Notifications</h2>
+            <h2>Real-Time Monitoring</h2>
+            <h2>Automated Alerts</h2>
+            <h2>Scheduling and Timing</h2>
+            <h2>User Convenience</h2>
+        </div>
+        <img src="image/eclipes.png" alt="eclipes" style="width:800px;height:300;">
+    </section>
+
+    <section class="analytics" style ="background-color: #d9d9a0;">
+        <h2>Data Analytics and Reporting</h2>
+        <p>The smart waste management web application not only streamlines waste collection processes but also educates
+            and engages the community, leading to more sustainable urban environments and contributing to the
+            achievement of <strong>SDG 11</strong>.</p>
+    </section>
+
+    <section class="gamification" style ="background-color: #d9d9a0;">
+        <p>JunkRe also gamifies responsible waste disposal, rewarding citizens with points for proper segregation and
+            recycling. These points can be redeemed for incentives, fostering community engagement and promoting
+            sustainable practices.</p>
+        </section>
+    <footer>
+        <div class="social-links">
+            <img src="image/linkedin.png" alt="linkedIn Logo" style="width:90px;height:auto;">
+            <img src="image/facebook.png" alt="facebook Logo" style="width:90px;height:auto;">
+            <img src="image/instagram.png" alt="Instagram logo" style="width:90px;height:auto;">
+        </div>
+        <div class="contact">
+            <div class="contact-item">
+                <img src="image/email.png" alt="email" style="width:90px;height:auto;">
+                <p>junkre@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <img src="image/location.png" alt="location" style="width:90px;height:auto;">
+                <p>
+                    Location: Chyasal, Lalitpur
+                </p>
+            </div>
+
+        </div>
+        <div class="legal">
+            <a href="#">Terms & Conditions</a><br>
+            <a href="#">Privacy Policy</a><br>
+            <a href="#">Cookie Policy</a><br>
+        </div>
+    </footer>
+
+    <script>
+      function toggleForm() {
+        var form = document.getElementById('userForm');
+        if (form.style.display === 'none' || form.style.display === '') {
+            form.style.display = 'block';
+            window.scrollTo({ top: form.offsetTop, behavior: 'smooth' });
+        } else {
+            form.style.display = 'none';
+        }
+    }
+    </script>
+</body>
+
+</html>
