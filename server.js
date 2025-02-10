@@ -4,6 +4,8 @@ const {Server} = require('socket.io');
 
 const cors = require('cors');
 const app = express();
+app.use(express.static("public"));
+
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
@@ -28,10 +30,6 @@ function haversine(lat1, lon1, lat2, lon2) {
   return R * c; // Distance in km
 }
 
-// Serve a basic HTML page
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
 
 // Handle WebSocket connection
 io.on('connection', (socket) => {
