@@ -3,23 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Socket.io Test</title>
+  <title>Geofencing Test</title>
 </head>
 <body>
-  <h1>Socket.io WebSocket Test</h1>
-  <button id="sendMessage">Send Message</button>
-
+  <h1>Geofencing Test</h1>
+  <button onclick="sendLocation()">Send Location</button>
   <script src="/socket.io/socket.io.js"></script>
+
   <script>
-    const socket = io();
+    // Connect to the server using WebSocket
+    const socket = io('http://localhost:3000');
 
-    document.getElementById('sendMessage').addEventListener('click', () => {
-      socket.emit('message', 'Hello from the client!');
-    });
+    // Get user location and send to server
+    function sendLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
 
-    socket.on('message', (data) => {
-      console.log('Received from server:', data);
-    });
+          // Log the location to verify it's being fetched correctly
+          console.log('User location:', lat, lon);
+
+          // Send the location to the server
+          socket.emit('message', { lat, lon });
+        }, (error) => {
+          console.error('Error getting location:', error);
+        });
+        
+      } else {
+        console.log("Geolocation is not supported by this browser.");
+      }
+    }
   </script>
+
 </body>
 </html>
